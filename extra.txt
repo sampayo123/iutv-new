@@ -1,0 +1,37 @@
+<div class="row justify-content-md-center" >
+     <div class="card text-white bg-dark mb-3" style="max-width: 50rem;"> 
+         <div class="container">
+            <div class="row">
+            <h5 class="card-title">Registro</h5>
+             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" class=>
+               
+                    <div class="form-group col-md-8">
+                        <label class="col 2 col-form-label">Nombre</label>
+                        <input type="text" name="nombre" placeholder="Nombre" class="form-control col-10">
+                     </div>
+
+                    <div class="form-group col">
+                     <label>Nacionalidad</label>
+                        <select name="tipo_pers" class="form-control " >
+                            <option value="V">V</option>
+                            <option value="E">E</option>
+                        </select>
+                    </div>
+
+                     <div class="form-group col">                                        
+                        <label class="col 2 col-form-label">Cedula</label>
+                        <input type="number" class="form-control" name="cedula" placeholder="Cedula" class="form-control col-10">
+                    </div>
+
+                    <div class="form-group col">
+                        <label class="col 2 col-form.label">Dirección</label>
+                        <input type="text" name="direccion" placeholder="Dirección" class="form-control col-10">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" name="btn"  class="btn btn-primary" onclick="location.href='./verContactos.php'" >Enviar</button>
+                        <button type="delete" name="btn2" class="btn btn-danger">Limpiar</button>
+                        <!-- se agrega el archivo de validacion -->
+                        <?php include ('validacion.php');?>
+                    </div>
+         </form>

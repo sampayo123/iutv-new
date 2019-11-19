@@ -13,41 +13,48 @@
             <ul class="nav justufy-content-end">
                 <li class="nav-item"><a class="nav-link active" href="./index.php">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link active" href="">Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link active" href="./contactos.php">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./verContactos.php">Contacto</a></li>
             </ul>
         </nav>
     </header>
-    
-    <div class="row justify-content-md-center" >
-        <div class="col-6"> 
-         
-                 <div class="card" style="width: 50rem;">
-                    <div class="card-body">
-                     <h5 class="card-title">Card title</h5>
-                        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" class="">
-                                     <div class="form-group">
-                                        <label class="col 2 col-form-label">Nombre</label>
-                                        <input type="text" name="nombre" placeholder="Nombre" class="form-control col-10">
-                                     </div>
-                                     <div class="form-group">
-                                        <label class="col 2 col-form-label">Cedula</label>
-                                        <input type="number" name="cedula" placeholder="Cedula" class="form-control col-10">
-                                     </div>
-                                     <div class="form-group">
-                                        <label class="col 2 col-form.label">Dirección</label>
-                                        <input type="text" name="direccion" placeholder="Dirección" class="form-control col-10">
-                                     </div>
-                                     <div class="form-group">
-                                        <button type="submit" name="btn" class="btn btn-primary">Enviar</button>
-                                        <button type="delete" name="btn2" class="btn btn-danger">Borrar</button>
-                                        <!-- se agrega el archivo de validacion -->
-                                        <?php include ('validacion.php')?>
-                                    </div>
-                             </form>
+    <div class="container">
+    <div class="row justify-content-center mt-5 pt-5">
+    <div class="col-md-7">
+    <form>
+                <div class="row form-group" >
+                    <label for="nombre" class="col-form-label col-md-4">Nombre</label>
+                    <div class="col-md-8">
+                        <input type="text" name="nombre" placeholder="Nombre" id="nombre" class="form-control" >
+                        </div>
                      </div>
 
-                </div>
-            </div> 
+                    <div class="row form-group">
+                     <label>Nacionalidad</label>
+                        <select name="tipo_pers">
+                            <option value="V">V</option>
+                            <option value="E">E</option>
+                        </select>
+                    </div>
+
+                     <div class="row form-group">                                        
+                        <label>Cedula</label>
+                        <input type="number" name="cedula" placeholder="Cedula">
+                    </div>
+
+                    <div class="row form-group">
+                        <label>Dirección</label>
+                        <input type="text" name="direccion" placeholder="Dirección" >
+                    </div>
+
+                    <div class="row form-group">
+                        <button type="submit" name="btn"  class="btn btn-primary" onclick="location.href='./verContactos.php'" >Enviar</button>
+             
+                    </div>
+    
+    </form>
+    </div>
+    </div>
+    </div>   
 
 </body>
 </html>

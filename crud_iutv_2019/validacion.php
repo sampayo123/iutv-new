@@ -3,6 +3,8 @@ if(isset($_POST['btn'])){
    $nombre= $_POST['nombre'];
    $cedula= $_POST['cedula'];
    $direccion= $_POST['direccion'];
+   $tipo_pers= $_POST['tipo_pers'];
+
 //saniamiento y limpieza del nombre
  if(empty($nombre)){
   
@@ -52,10 +54,23 @@ if(isset($_POST['btn'])){
     echo "<br>".$direccion."<br>";
     }
  }
+
+ if($tipo_pers=="V" or $tipo_pers=="E" ){
+   $tipo_pers= strip_tags($tipo_pers);
+   $tipo_pers= stripslashes($tipo_pers);
+  $tipo_pers=trim($tipo_pers);
+
+   filter_var($tipo_pers, FILTER_SANITIZE_STRING);
+
+  
+   
+}else{
+   echo "<br>Campo no valido<br>";
+}
+
 //valida que los datos no se manden vacios a la base de datos
- if(!empty($nombre) and !empty($cedula) and !empty($direccion)){
+ if(!empty($nombre) and !empty($cedula) and !empty($direccion) and $tipo_pers =="V" or $tipo_pers =="E"){
  include 'crear.php';
-   print('<br>Datos insertados');
  }
 
 }
